@@ -52,7 +52,7 @@ function submitGenre(elem){
                       'name' => 'Ver Ficha',
                       'url' => 'index.php?r=cine/film_sheet&id=', 
                     );    
-                    list_flex_4col_1action($header_title, $total_results, $header_list, $container_list, $data_list, $keys_data_list,$style_data_list, $data_list_size=null, $action_filter1);
+                    listado_flex_4col_1action($header_title, $total_results, $header_list, $container_list, $data_list, $keys_data_list,$style_data_list, $data_list_size=null, $action_filter1);
                     }else{ ?>
                 <div class="list_content"><span class="rotulo_mid">No se han encontrado resultados</span></div>
                 <?php } ?>

@@ -90,6 +90,8 @@ $(window).resize(function(){
 
 }); 
 
+
+
 function videoFirstLoad(){
     var linkFirstLoad = linksArray[3];
     var idFirstLoad = idsArray[3]
@@ -175,7 +177,23 @@ function sliderNext_x1(){
     $('#box_film_content_img_id4').attr('src', '<?= BASEPATH ?>SourceFiles/resources/images/'+imagesArray[contador_posicion4x1]);
     $('#box_film_content_img_id5').attr('src', '<?= BASEPATH ?>SourceFiles/resources/images/'+imagesArray[contador_posicion5x1]);
     $('#box_film_content_img_id6').attr('src', '<?= BASEPATH ?>SourceFiles/resources/images/'+imagesArray[contador_posicion6x1]);
-
+    /*
+    jQuery.fn.whenLoaded = function(fn){
+      return this.each(function(){
+        // if already loaded call callback
+        if (this.complete || this.readyState == 'complete'){
+          fn.call(this);
+        } else { // otherwise bind onload event
+          $(this).load(fn);
+        }
+      });
+    }
+    console.time('loop');
+    $('#box_film_content_img_id3').whenLoaded(function(){
+      console.log(this.src + ' loaded');
+    });
+    console.timeEnd('loop');
+ */
     $('#box_film_content_title_id0').text(titlesArray[contador_posicion0x1]);
     $('#box_film_content_title_id1').text(titlesArray[contador_posicion1x1]);
     $('#box_film_content_title_id2').text(titlesArray[contador_posicion2x1]);
@@ -250,7 +268,6 @@ function sliderNext_x1(){
     
     alterLinkManagement();
    // imageAnimationManagement(urlAnimage);
-  
 }
 
 function imageAnimationManagement(elem){
@@ -454,7 +471,6 @@ function animaScrolling(){
 
 
 
-
 </script>
 
 <html>
@@ -525,7 +541,7 @@ function animaScrolling(){
                         <img src="<?= BASEPATH ?>SourceFiles/resources/images/<?php echo $display['films'][2]['image'] ?>" id="box_film_content_img_id2"/>
                     </div>
                     <div class="film_text_box">
-                        <div style="text-align: center; background-color: transparent;"><span class="label-title" id="box_film_content_title_id2"></span>&nbsp<span class="label-year" id="box_film_content_year_id2"></span></div>
+                        <div style="text-align: center; background-color: transparent; margin-top: 6%"><span class="label-title" id="box_film_content_title_id2"></span>&nbsp<span class="label-year" id="box_film_content_year_id2"></span></div>
                         <div style="margin-left: 10px;margin-top: 10px;"><span class="label-text">Director: </span><span class="label-director"></span></div>
                         <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Reparto: </span><span class="label-reparto"></span></div>
                        
@@ -544,11 +560,13 @@ function animaScrolling(){
 
                     </div>
                     <div class="film_text_box">
-                        <div style="text-align: center; background-color: transparent;"><span class="label-title" id="box_film_content_title_id3"><?php echo $display['films'][3]['titulo'] ?></span>&nbsp<span class="label-year" id="box_film_content_year_id3"><?php echo $display['films'][3]['anyo'] ?></span></div>
-                        <div style="margin-left: 10px;margin-top: 10px;"><span class="label-text">Director: </span><span class="label-director" id="box_film_content_director_id3"><?php echo $display['films'][3]['director'] ?></span></div>
-                        <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Reparto: </span><span class="label-reparto" id="box_film_content_reparto_id3"><?php echo $display['films'][3]['reparto'] ?></span></div>
-                        <div style="margin-left: 10px;margin-top: 5px; display: none;" id="alter-link-block"><span class="label-link" id="box_film_content_link_id3">
+                        <div class="film_text_cuaderno">
+                            <div style="text-align: center; background-color: transparent; margin-top: 6% ; margin-bottom: 6%"><span class="label-title" id="box_film_content_title_id3"><?php echo $display['films'][3]['titulo'] ?></span>&nbsp<span class="label-year" id="box_film_content_year_id3"><?php echo $display['films'][3]['anyo'] ?></span></div>
+                            <div style="margin-left: 10px;margin-top: 10px;"><span class="label-text">Director: </span><span class="label-director" id="box_film_content_director_id3"><?php echo $display['films'][3]['director'] ?></span></div>
+                            <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Reparto: </span><span class="label-reparto" id="box_film_content_reparto_id3"><?php echo $display['films'][3]['reparto'] ?></span></div>
+                            <div style="margin-left: 10px;margin-top: 5px; display: none;" id="alter-link-block"><span class="label-link" id="box_film_content_link_id3">
 
+                            </div>
                         </div>                         
                         <?php include 'edit_view.php'; ?>
                            
@@ -569,9 +587,11 @@ function animaScrolling(){
                         <img src="<?= BASEPATH ?>SourceFiles/resources/images/<?php echo $display['films'][4]['image'] ?>" id="box_film_content_img_id4"/>
                     </div>
                     <div class="film_text_box">
-                        <div style="text-align: center; background-color: transparent;"><span class="label-title" id="box_film_content_title_id4"><?php echo $display['films'][4]['titulo'] ?></span>&nbsp<span class="label-year" id="box_film_content_year_id4"></span></div>
-                        <div style="margin-left: 10px;margin-top: 10px;"><span class="label-text">Director: </span><span class="label-director"></span></div>
-                        <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Reparto: </span><span class="label-reparto"></span></div>          
+                        <div class="film_text_cuaderno">
+                            <div style="text-align: center; background-color: transparent; margin-top: 6%; margin-bottom: 6%"><span class="label-title" id="box_film_content_title_id4"><?php echo $display['films'][4]['titulo'] ?></span>&nbsp<span class="label-year" id="box_film_content_year_id4"></span></div>
+                            <div style="margin-left: 10px;margin-top: 10px;"><span class="label-text">Director: </span><span class="label-director"></span></div>
+                            <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Reparto: </span><span class="label-reparto"></span></div>
+                        </div>          
                     </div>
                 </div>  
                 <div class="box_film_content_right_secondary" id="box_film_content_id5" onclick="transitionBefore();" style="cursor: pointer;">
@@ -579,9 +599,11 @@ function animaScrolling(){
                         <img src="<?= BASEPATH ?>SourceFiles/resources/images/<?php echo $display['films'][5]['image'] ?>" id="box_film_content_img_id5"/>
                     </div>
                     <div class="film_text_box">
-                        <div style="text-align: center; background-color: transparent;"><span class="label-title" id="box_film_content_title_id5"><?php echo $display['films'][5]['titulo'] ?></span>&nbsp<span class="label-year" id="box_film_content_year_id5"></span></div>
+                        <div class="film_text_cuaderno">
+                        <div style="text-align: center; background-color: transparent; margin-top: 6%; margin-bottom: 6%" ><span class="label-title" id="box_film_content_title_id5"><?php echo $display['films'][5]['titulo'] ?></span>&nbsp<span class="label-year" id="box_film_content_year_id5"></span></div>
                         <div style="margin-left: 10px;margin-top: 10px;"><span class="label-text">Director: </span><span class="label-director"></span></div>
-                        <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Reparto: </span><span class="label-reparto"></span></div>                
+                        <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Reparto: </span><span class="label-reparto"></span></div> 
+                        </div>               
                     </div>
                 </div>
                 <div class="box_film_content_right_terciary" id="box_film_content_id6"  onclick="transitionBefore();" style="cursor: pointer;">
@@ -589,9 +611,11 @@ function animaScrolling(){
                         <img src="<?= BASEPATH ?>SourceFiles/resources/images/<?php echo $display['films'][6]['image'] ?>" id="box_film_content_img_id6"/>
                     </div>
                     <div class="film_text_box">
-                        <div style="text-align: center; background-color: transparent;"><span class="label-title" id="box_film_content_title_id6"></span>&nbsp<span class="label-year" id="box_film_content_year_id6"></span></div>
+                        <div class="film_text_cuaderno">
+                        <div style="text-align: center; background-color: transparent;  margin-top: 6%; margin-bottom: 6%"><span class="label-title" id="box_film_content_title_id6"></span>&nbsp<span class="label-year" id="box_film_content_year_id6"></span></div>
                         <div style="margin-left: 10px;margin-top: 10px;"><span class="label-text">Director: </span><span class="label-director"></span></div>
-                        <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Reparto: </span><span class="label-reparto"></span></div>                
+                        <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Reparto: </span><span class="label-reparto"></span></div>  
+                        </div>              
                     </div>
                 </div> 
 

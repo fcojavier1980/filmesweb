@@ -133,7 +133,7 @@ src: url('../fonts/golden-dragon-solid.ttf');
     border-top-right-radius: 8px;  
     border-bottom-color: transparent;
     background-color: #556b2f;  
-
+    z-index: 1;
     font-family: dragon;
     font-size : 14px;
     text-shadow: 1px 1px #ffffff;
@@ -144,6 +144,8 @@ src: url('../fonts/golden-dragon-solid.ttf');
     padding-left: 15px;
     padding-right: 15px;
     background-image:url("tapete.jpg");
+    box-shadow: 0px -4px 8px -3px black;
+
 }
 
 .tab_genre_normal{
@@ -152,7 +154,7 @@ src: url('../fonts/golden-dragon-solid.ttf');
     border-top-right-radius: 8px;  
     border-bottom-color: transparent;
     background-color: gainsboro; 
-    border-bottom-color: #B0B0B0; 
+
     font-family: dragon;
     font-size : 14px;
     text-shadow: 1px 1px #ffffff;
@@ -163,7 +165,8 @@ src: url('../fonts/golden-dragon-solid.ttf');
     white-space:nowrap;
     padding-left: 15px;
     padding-right: 15px;
-    background-image:url("tapetegris.jpg");
+    background-image:url("tapete.jpg");
+    opacity: 0.7;
 }
 
 .tab_genre_normal:click {
@@ -174,6 +177,13 @@ src: url('../fonts/golden-dragon-solid.ttf');
     transition: opacity 1s ease-in-out;
 }
 
+
+.tab_genre_disfocus{
+    height: 10px;
+    background-image:url("tapetegris.jpg");
+    z-index: 2;
+
+}
 #exit_cine3 {
     margin-right: 15px;
     margin-left: 15px;
@@ -228,7 +238,7 @@ src: url('../fonts/golden-dragon-solid.ttf');
     padding-top: 8%;
     position: relative;
     background-image:url("tapete.jpg");
-   
+    box-shadow: 0px 1px 12px 1px black;
 }
 
 .specific_content_long{
@@ -238,6 +248,8 @@ src: url('../fonts/golden-dragon-solid.ttf');
     padding-left: 8%;
     position: relative;    
     background-image:url("tapete.jpg");
+    position: relative;    
+    box-shadow: 0px 1px 12px 1px black;     
 }
 
 .specific_content_list{
@@ -245,6 +257,8 @@ src: url('../fonts/golden-dragon-solid.ttf');
     background-color: #556b2f;
     padding-top: 90px;
     background-image:url("tapete.jpg");
+    box-shadow: 0px 1px 12px 1px black;
+    position: relative;
 }
 
 .specific_content_sub_list{
@@ -258,11 +272,15 @@ src: url('../fonts/golden-dragon-solid.ttf');
     background-color: #556b2f;
     background-image:url("tapete.jpg");
     padding-top: 90px;
+    box-shadow: 0px 1px 12px 1px black;
+    position: relative;    
 }
 .specific_content_search{
     background-color: #556b2f; 
     padding-top: 90px;
     background-image:url("tapete.jpg");
+    position: relative;    
+    box-shadow: 0px 1px 12px 1px black;   
 }
 
 .specific_content_comment{
@@ -418,6 +436,25 @@ margin-left: 10px;
 
 }
 
+.film_text_cuaderno {
+    width: 88%;
+    height: 50%;
+    position:relative;
+    background-image:url("folioviejo.jpg");
+    box-shadow: 2px 4px 10px 0px black;
+    border-radius: 5px;
+}
+
+.film_text_cuaderno_sheet {
+    width: 88%;
+    height: 50%;
+    position:relative;
+    background-image:url("folioviejo.jpg");
+    box-shadow: 2px 4px 10px 0px black;
+    border-radius: 7px;
+    margin-top: 3%;
+}
+
 .film_text_box > video{
     position:absolute;
     bottom:0px;
@@ -487,7 +524,7 @@ margin-left: 10px;
 
 .label-title{
     font-family: dragon;
-    text-shadow: 2px 2px moccasin;
+
     font-size : 24px;
     color: black;
 }
@@ -525,6 +562,7 @@ margin-left: 10px;
     font-weight: bold;
     font-style: italic;
     color: blue;
+    background-color: #f3d1a4;
 }
 
 #alter-link{
@@ -557,6 +595,7 @@ margin-left: 10px;
     color: #672d3b;
     white-space: nowrap;
     text-shadow: 1px 1px #ffffff;
+    background-color: #f3d1a4;
     
 }
 
@@ -699,6 +738,7 @@ font-weight: bold;
     border: 2px solid #B0B0B0;
     border-left: none;
     background-image:url("solapa.jpg");
+    box-shadow: 1px 1px 21px 1px black;
 }
 
 .search_film_header{
@@ -733,6 +773,15 @@ font-weight: bold;
     
 }
 
+#icon_search{
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: flex;
+    float: right;
+    box-shadow: 1px 1px 21px 1px black;   
+}
+
 #icon-home{
     margin-left: 20px;
     padding-top: 10px;
@@ -761,7 +810,7 @@ font-weight: bold;
 .icon-plus_video{
     margin-left: 10px;
     margin-right: 10px;
-    padding-top: 10px;
+    padding-top: 6px;
     cursor: pointer;
 
 }
@@ -770,7 +819,7 @@ font-weight: bold;
     display: none;
     margin-left: 10;
     margin-right: 10px;
-    padding-top: 10px;
+    padding-top: 6px;
     cursor: pointer;
     float: right;    
 }
@@ -806,7 +855,7 @@ font-weight: bold;
 #icon-add-film{
 
     cursor: pointer;  
-       
+    margin-bottom: 24px;   
 }
 
 #icon-target{
@@ -1079,7 +1128,7 @@ font-weight: bold;
     margin-right: 10%;
     margin-left: 15px;
     width: 70%;
-    background-color: #ffffff;
+    background-color: #f3d1a4;
     border-radius: 5px;
     border: 3px solid darkolivegreen;
 
@@ -1113,6 +1162,7 @@ font-weight: bold;
 .collapsible-container-video{
     display: flex;
     width: 50%;
+    background-color: #f3d1a4;
 }
 
 .separador{
@@ -1249,19 +1299,16 @@ font-weight: bold;
 }
 
 .list_sub_content{
-
-    background-color:#672d3b;
-    width: 79.5%;
+    background-color: #672d3b;
+    width: 80.5%;
     margin-bottom: 50px;
     margin-left: 8%;
-    margin-right: 10%;
-    position: absolute;
     box-shadow: 5px 5px 30px 20px black;
     margin-top: -1%;
     border: 10px solid #672d3b;
-    border-radius: 6px;  
-    background-image:url("solapa.jpg");  
-    
+    border-radius: 6px;
+    background-image: url("solapa.jpg");
+        
 }
 .header_list{
     position: absolute;
@@ -1272,6 +1319,14 @@ font-weight: bold;
     border-bottom: 2px solid burlywood;   
 }
 
+.header_list_sub{
+    position: absolute;
+    height: 30px;
+    width: 80.5%;
+    margin-bottom: 2px;  
+    background-color: darksalmon;
+    border-bottom: 2px solid burlywood;   
+}
 .data_list{
     max-height: 400px;
     overflow-x: hidden;   

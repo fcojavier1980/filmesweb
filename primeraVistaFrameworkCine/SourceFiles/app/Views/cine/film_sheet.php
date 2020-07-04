@@ -198,6 +198,7 @@ function showOptionForm(){
                         <img src="" id="box_film_content_img_id<?php echo $cont ?>" title="Cover"/>
                     </div>
                     <div class="film_text_box">
+                        <div class="film_text_cuaderno_sheet">
                         <div style="text-align: center; background-color: transparent;"><span class="label-title"><?php echo $elemento['titulo'] ?></span>&nbsp<span class="label-year">(<?php echo $elemento['anyo'] ?>)</span></div>
                         <div style="margin-left: 10px;margin-top: 10px;"><span class="label-text">Director: </span><span class="label-director"><?php echo $elemento['director'] ?></span></div>
                         <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Reparto: </span><span class="label-reparto"><?php echo $elemento['reparto'] ?></span></div>
@@ -208,15 +209,18 @@ function showOptionForm(){
                         $film_video_options_total = count($display['film_video_options']);
                         foreach ($display['film_video_options'] as $key3 => $elemento3){ 
                             collapsibleSectionVideoInfo($elemento3['id_video_option'], $elemento3['etiqueta'], $elemento3['id_video_option'], $elemento3['idioma'], $elemento3['peso'], $elemento3['calidad'], $elemento3['tipo'], $elemento3['videourl'])?>
-                        <?php $cont3++; } ?>                          
+                        <?php $cont3++; } ?>                           
+                        
+                       </div>
                         <div>
                     
                             <button type="button" class="mod-text admin_actions" onclick="showMod(this);">MODIFICAR</button>
                             <button type="button" class="mod-text admin_actions" onclick="showOptionForm();">AÑADIR OPCIÓN DE VIDEO</button>
                         </div>
                         <?php include 'video-control-sheet.php'; ?>
-                    </div>
+                    
                 </div>
+            </div>
              
 
             </div>

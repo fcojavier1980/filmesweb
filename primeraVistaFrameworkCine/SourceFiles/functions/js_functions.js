@@ -422,7 +422,7 @@ function transitionNext(){
         marginLeft: "10%",     
         height: "35%",
         width: "30%", 
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".box_film_content_left_terciary" ).animate({
         opacity: 0.0,
@@ -441,7 +441,7 @@ function transitionNext(){
         marginLeft: "15%",     
         height: "45%",
         width: "40%",
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".box_film_content_left_secondary" ).animate({
         opacity: 0.1,
@@ -460,7 +460,7 @@ function transitionNext(){
         marginLeft: "25%",     
         height: "55%",
         width: "50%",
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".box_film_content_left" ).animate({
         opacity: 0.7,
@@ -479,7 +479,7 @@ function transitionNext(){
         marginLeft: "45%",     
         height: "45%",
         width: "40%",
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".box_film_content_center" ).animate({
         opacity: 1,
@@ -498,7 +498,7 @@ function transitionNext(){
     marginLeft: "60%",     
     height: "35%",
     width: "30%",
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".box_film_content_right" ).animate({
         opacity: 0.7,
@@ -517,7 +517,7 @@ function transitionNext(){
     marginTop: "10%",     
     height: "25%",
     width: "30%",
-  }, 400, function() {
+  }, 200, function() {
     $( ".box_film_content_right_secondary" ).animate({
         opacity: 0.1,
         marginTop: "5%",
@@ -537,7 +537,7 @@ function transitionNext(){
 	    width: "1.8%",    
 	    marginLeft: "10.5%",
 	    marginTop: "4.4%",
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".clip-container-left-terciary > img" ).animate({
         opacity: 0,
@@ -556,7 +556,7 @@ function transitionNext(){
 	    width: "2.4%",    
 	    marginLeft: "15.4%",
 	    marginTop: "1.9%",
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".clip-container-left-secondary > img" ).animate({
         opacity: 0.5,
@@ -575,7 +575,7 @@ function transitionNext(){
 	    width: "3%",    
 	    marginLeft: "25.4%",
 	    marginTop: "-1%",
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".clip-container-left > img" ).animate({
         opacity: 1,
@@ -595,7 +595,7 @@ function transitionNext(){
 	    marginLeft: "45.4%",
 	    zIndex: 10,
 	    marginTop: "2.3%",
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".clip-container-center > img" ).animate({
         opacity: 1,
@@ -621,7 +621,7 @@ function transitionBefore(){
         marginLeft: "10%",     
         height: "25%",
         width: "20%",
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".box_film_content_left_secondary" ).animate({
         opacity: 0.1,
@@ -641,7 +641,7 @@ function transitionBefore(){
         marginLeft: "10%",     
         height: "35%",
         width: "30%",
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".box_film_content_left" ).animate({
         opacity: 0.7,
@@ -660,7 +660,7 @@ function transitionBefore(){
         marginLeft: "15%",     
         height: "45%",
         width: "40%",
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".box_film_content_center" ).animate({
         opacity: 1,
@@ -679,7 +679,7 @@ function transitionBefore(){
     marginLeft: "25%",     
     height: "55%",
     width: "50%",
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".box_film_content_right" ).animate({
         opacity: 0.7,
@@ -699,7 +699,7 @@ function transitionBefore(){
     marginLeft: "45%",      
     height: "45%",
     width: "40%",
-  }, 400, function() {
+  }, 200, function() {
     $( ".box_film_content_right_secondary" ).animate({
         opacity: 0.1,
         marginTop: "5%",
@@ -719,7 +719,7 @@ function transitionBefore(){
         marginLeft: "60%",     
         height: "35%",
         width: "30%", 
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".box_film_content_right_terciary" ).animate({
         opacity: 0.0,
@@ -742,7 +742,7 @@ function transitionBefore(){
 	    width: "1.8%",    
 	    marginLeft: "9.5%",
 	    marginTop: "6.8%", 	    	
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".clip-container-left-secondary > img" ).animate({
         opacity: 0.5,
@@ -762,7 +762,7 @@ function transitionBefore(){
 	    width: "1.8%",    
 	    marginLeft: "10.5%",
 	    marginTop: "4.4%",
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".clip-container-left > img" ).animate({
         opacity: 1,
@@ -781,7 +781,7 @@ function transitionBefore(){
 	    width: "2.4%",    
 	    marginLeft: "15.4%",
 	    marginTop: "1.9%",
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".clip-container-center > img" ).animate({
         opacity: 1,
@@ -800,7 +800,7 @@ function transitionBefore(){
 	    width: "3%",    
 	    marginLeft: "25.4%",
 	    marginTop: "-1%",
-    }, 400, function() {
+    }, 200, function() {
     // Animation complete.
     $( ".clip-container-right > img" ).animate({
         opacity: 0.0,
