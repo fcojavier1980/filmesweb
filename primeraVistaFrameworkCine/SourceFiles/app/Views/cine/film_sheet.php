@@ -193,6 +193,9 @@ function showOptionForm(){
             $films_total = count($display['films']);
             foreach ($display['films'] as $key => $elemento){ ?>
             <div class="specific_content" id="specific_film_<?php echo $elemento['id']; ?>" style="display: <?php echo $cont == 1 ? 'flex' : 'none' ?>">
+                <div class="clip-container-sheet">   
+                    <img src="<?= BASEPATH ?>SourceFiles/resources/images/clip.png" />         
+                </div>                          
                 <div class="box_film_content" id="box_film_content_id<?php echo $cont ?>">
                     <div class="film_cover_box">
                         <img src="" id="box_film_content_img_id<?php echo $cont ?>" title="Cover"/>
@@ -202,6 +205,7 @@ function showOptionForm(){
                         <div style="text-align: center; background-color: transparent;"><span class="label-title"><?php echo $elemento['titulo'] ?></span>&nbsp<span class="label-year">(<?php echo $elemento['anyo'] ?>)</span></div>
                         <div style="margin-left: 10px;margin-top: 10px;"><span class="label-text">Director: </span><span class="label-director"><?php echo $elemento['director'] ?></span></div>
                         <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Reparto: </span><span class="label-reparto"><?php echo $elemento['reparto'] ?></span></div>
+                        <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Nacionalidad: </span><span class="label-reparto"><?php echo $elemento['nacionalidad'] ?></span></div>                        
                         <?php include 'edit_view.php'; ?>
                         <?php include 'add_video_option.php'; ?>
                         <?php

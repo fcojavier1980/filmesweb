@@ -1490,6 +1490,16 @@ font-weight: bold;
     z-index: 6;
 }
 
+
+.clip-container-sheet > img{
+    height: 11%;
+    width: 3%;
+    margin-left: 16.5%;
+    z-index: 11;
+    margin-top: -1%;
+    transform: rotate(344deg);
+    position: absolute;
+}
 /*
 -------------------------------------------------------------------------------
         END SEARCH SECTION
