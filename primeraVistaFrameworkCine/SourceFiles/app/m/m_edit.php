@@ -13,13 +13,14 @@ $reparto = $_POST['reparto'];
 $genero = $_POST['genero'];
 $nacionalidad = $_POST['nacionalidad'];
 $texto = $_POST['texto'];
+$cvideo = $_POST['cvideo'];
 
 
 try {
     $conn = new PDO("mysql:host=$db_host;dbname=$db_nombre", $db_usuario, $db_contra);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql="UPDATE peliculas SET titulo = '$title', director = '$dir_new', anyo = '$anyo', genero = '$genero', nacionalidad = '$nacionalidad', reparto = '$reparto', texto = '$texto', videourl = '$video' WHERE id = '$id'";
+    $sql="UPDATE peliculas SET titulo = '$title', director = '$dir_new', anyo = '$anyo', genero = '$genero', nacionalidad = '$nacionalidad', reparto = '$reparto', texto = '$texto', videourl = '$video' , cvideo = '$cvideo' WHERE id = '$id'";
     // use exec() because no results are returned
     $conn->exec($sql);
     }

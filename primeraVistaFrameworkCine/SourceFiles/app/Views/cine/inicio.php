@@ -32,6 +32,7 @@ if(isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'Javi'){
     $new_array_images = array();
     $new_array_urls = array();
     $new_array_fotogramas = array();
+    $new_array_cvideos = array();
     for($k = 0; $pelis_genero_total > $k; $k++){
         $contenido_id = $display['films'][$k]['id'];
         $contenido_title = $display['films'][$k]['titulo'];
@@ -41,6 +42,7 @@ if(isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'Javi'){
         $contenido_texto = $display['films'][$k]['texto'];
         $contenido_img = $display['films'][$k]['image'];
         $contenido_url = $display['films'][$k]['videourl'];
+        $contenido_cvideo = $display['films'][$k]['cvideo'];
         $contenido_fotograma = $display['films'][$k]['fotograma'];
         $new_array_ids[] = $contenido_id;
         $new_array_titles[] = $contenido_title;
@@ -51,6 +53,7 @@ if(isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'Javi'){
         $new_array_images[] = $contenido_img;
         $new_array_urls[] = $contenido_url;  
         $new_array_fotogramas[] = $contenido_fotograma;
+        $new_array_cvideos[] = $contenido_cvideo;
     }
 
 ?>
@@ -66,6 +69,7 @@ var linksArray = <?php echo json_encode($new_array_links); ?>;
 var imagesArray = <?php echo json_encode($new_array_images); ?>;  
 var videourlsArray = <?php echo json_encode($new_array_urls); ?>;
 var fotogramasArray = <?php echo json_encode($new_array_fotogramas); ?>;
+var cvideosArray = <?php echo json_encode($new_array_cvideos); ?>;
 $( document ).ready(function() {
     var ancho_inicial = $(window).width();
     if(ancho_inicial < 450){
@@ -74,6 +78,7 @@ $( document ).ready(function() {
         $('#icon_search').show();
     }
     $('#preloader').css('display', 'none');
+    
     videoFirstLoad();
     //setInterval(function(){ transitionNext(); }, 600);
     animaScrolling();
@@ -97,6 +102,7 @@ function videoFirstLoad(){
     var idFirstLoad = idsArray[3]
     var fotograma_url = fotogramasArray[3];
     var video_url = videourlsArray[3];
+    var cvideo = cvideosArray[3];
     var plattform_okru_old = video_url.includes("ok.ru/video/");
     var plattform_okru_new = video_url.includes("ok.ru/videoembed/"); 
     var plattform_dailymotion = video_url.includes("dailymotion");  
@@ -128,7 +134,8 @@ function videoFirstLoad(){
         $('video')[0].load(); 
     }    
 
-    alterLinkManagement(linkFirstLoad, idFirstLoad);     
+    alterLinkManagement(linkFirstLoad, idFirstLoad);    
+
 
 }
 
@@ -206,6 +213,7 @@ function sliderNext_x1(){
 
     $('#box_film_content_director_id3').text(directorsArray[contador_posicion3x1]);
     $('#box_film_content_reparto_id3').text(repartosArray[contador_posicion3x1]);
+    $('#box_film_content_cvideo_id3').text(cvideosArray[contador_posicion3x1]);
     var path_initial = "<?= URLWEB ?>";
     var link_film_sheet = path_initial+"index.php?r=cine/film_sheet&id="+idsArray[contador_posicion3x1];
     if(linksArray[contador_posicion3x1] == 1){
@@ -268,6 +276,7 @@ function sliderNext_x1(){
     
     alterLinkManagement();
    // imageAnimationManagement(urlAnimage);
+
 }
 
 function imageAnimationManagement(elem){
@@ -369,6 +378,7 @@ function sliderBefore_x1(){
 
     $('#box_film_content_director_id3').text(directorsArray[contador_posicion3x1]);
     $('#box_film_content_reparto_id3').text(repartosArray[contador_posicion3x1]);
+    $('#box_film_content_cvideo_id3').text(cvideosArray[contador_posicion3x1]);
 
     // -------------- ejemplo orden sql (UPDATE peliculas SET texto = NULL WHERE id=247;)   -------------------------- //
 
@@ -469,6 +479,23 @@ function animaScrolling(){
     }, 500);
 }
 
+function imageLoadControl(){
+    
+    $('#box_film_content_img_id1').load(function(){
+        alert('Image is loaded!'); 
+    });
+
+  
+}
+
+function imageLoadControl2(){
+    
+
+       alert('Image is NOT loaded!'); 
+   
+
+  
+}
 
 
 </script>
@@ -488,6 +515,9 @@ function animaScrolling(){
             <div id="preloader">
                 <img src="<?= BASEPATH ?>SourceFiles/resources/images/preloader.gif" alt="Preloader"/>
             </div>
+            <div id="preloaderCover" style="display: none;">
+                <img src="<?= BASEPATH ?>SourceFiles/resources/images/preloader.gif" alt="Preloader"/>
+            </div>            
             <div class="module-block-default">
                 <?php include 'tabs-header.php'; ?> 
                 <?php include 'navigation-bar.php'; ?>         
@@ -521,7 +551,7 @@ function animaScrolling(){
                 <div class="box_film_content_left_secondary" id="box_film_content_id1" onclick="transitionNext();" style="cursor: pointer;">
 
                     <div class="film_cover_box">
-                        <img src="<?= BASEPATH ?>SourceFiles/resources/images/<?php echo $display['films'][1]['image'] ?>" id="box_film_content_img_id1"/>
+                        <img src="<?= BASEPATH ?>SourceFiles/resources/images/<?php echo $display['films'][1]['image'] ?>" id="box_film_content_img_id1" onunload="imageLoadControl2();" onerror="javascript: console.log('failure')" />
                     </div>
                     <div class="film_text_box">
                         <div style="text-align: center; background-color: transparent;"><span class="label-title" id="box_film_content_title_id1"></span>&nbsp(<span class="label-year" id="box_film_content_year_id1"></span>)</div>
@@ -564,6 +594,7 @@ function animaScrolling(){
                             <div style="text-align: center; background-color: transparent; margin-top: 6% ; margin-bottom: 6%"><span class="label-title" id="box_film_content_title_id3"><?php echo $display['films'][3]['titulo'] ?></span>&nbsp<span class="label-year" id="box_film_content_year_id3"><?php echo $display['films'][3]['anyo'] ?></span></div>
                             <div style="margin-left: 10px;margin-top: 10px;"><span class="label-text">Director: </span><span class="label-director" id="box_film_content_director_id3"><?php echo $display['films'][3]['director'] ?></span></div>
                             <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Reparto: </span><span class="label-reparto" id="box_film_content_reparto_id3"><?php echo $display['films'][3]['reparto'] ?></span></div>
+                            <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Video: </span><span class="label-reparto" id="box_film_content_cvideo_id3"><?php echo $display['films'][3]['cvideo'] ?></span></div>
                             <div style="margin-left: 10px;margin-top: 5px; display: none;" id="alter-link-block"><span class="label-link" id="box_film_content_link_id3">
 
                             </div>

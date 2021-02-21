@@ -31,6 +31,8 @@ $( document ).ready(function() {
         $('#icon_search').show();
     }
     //setInterval(function(){ transitionNext(); }, 600);
+    $('.header_list_sub').css('width', '80.5%');
+    $('.header_list').css('width', '80.5%');
 });
 
 $(window).resize(function(){
@@ -123,7 +125,7 @@ var countries = <?php echo json_encode($arr_from_query_countries_tag); ?>;
                       'name' => 'Ver Ficha',
                       'url' => 'index.php?r=cine/film_sheet&id=', 
                     );    
-                    list_flex_4col_1action($header_title, $total_results, $header_list, $container_list, $data_list, $keys_data_list, $style_data_list, $data_list_size, $action_filter1);
+                    listado_flex_4col_1action($header_title, $total_results, $header_list, $container_list, $data_list, $keys_data_list, $style_data_list, $data_list_size, $action_filter1);
                     }                
                 else if(isset($arr_from_query_actor) && $total_results!= 0){
                     $header_title = 'ACTOR/ACTRIZ';

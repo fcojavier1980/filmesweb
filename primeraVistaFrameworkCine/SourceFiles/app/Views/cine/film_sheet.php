@@ -40,6 +40,33 @@ if(isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'Javi'){
 }
 
 ?>
+<style type="text/css">
+.film_cover_box {
+      position:relative;
+ 
+  width:50%;
+  margin:0 auto;
+}
+
+.film_cover_box > img{
+    width: 84%;
+    height: 84%;
+    min-margin: 15px 15px 15px 15px;
+    box-shadow: 5px 4px 11px 3px dimgray;
+    margin-top: 10px;
+    margin-left: 10px;
+    position:absolute;
+    left:0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+.film_cover_box img.top:hover {
+  opacity:0;
+}   
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 </script>
 <script>
@@ -50,6 +77,7 @@ var fotogramasArray = <?php echo json_encode($new_array_fotogramas); ?>;
 $( document ).ready(function() {
     posicionaFlechas2();
     $('#box_film_content_img_id1').attr('src', '<?= BASEPATH ?>SourceFiles/resources/images/'+imagesArray[0]);
+     $('#box_film_content_fot_id1').attr('src', '<?= BASEPATH ?>SourceFiles/resources/images/'+fotogramasArray[0]);
     $('#videotube1').attr('src', videourlsArray[0]);
     $('#fotograma_id1').attr('src', '<?= BASEPATH ?>SourceFiles/resources/images/'+fotogramasArray[0]); 
     var ancho_inicial = $(window).width();
@@ -197,15 +225,18 @@ function showOptionForm(){
                     <img src="<?= BASEPATH ?>SourceFiles/resources/images/clip.png" />         
                 </div>                          
                 <div class="box_film_content" id="box_film_content_id<?php echo $cont ?>">
-                    <div class="film_cover_box">
-                        <img src="" id="box_film_content_img_id<?php echo $cont ?>" title="Cover"/>
+                    <div class="film_cover_box" style="position: relative;">
+                        <img src="" id="box_film_content_fot_id<?php echo $cont ?>" class="bottom" style="position: absolute;"/>
+                        <img src="" id="box_film_content_img_id<?php echo $cont ?>" class="top" style="position: absolute;"/>
                     </div>
                     <div class="film_text_box">
                         <div class="film_text_cuaderno_sheet">
                         <div style="text-align: center; background-color: transparent;"><span class="label-title"><?php echo $elemento['titulo'] ?></span>&nbsp<span class="label-year">(<?php echo $elemento['anyo'] ?>)</span></div>
                         <div style="margin-left: 10px;margin-top: 10px;"><span class="label-text">Director: </span><span class="label-director"><?php echo $elemento['director'] ?></span></div>
                         <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Reparto: </span><span class="label-reparto"><?php echo $elemento['reparto'] ?></span></div>
-                        <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Nacionalidad: </span><span class="label-reparto"><?php echo $elemento['nacionalidad'] ?></span></div>                        
+                        <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Nacionalidad: </span><span class="label-reparto"><?php echo $elemento['nacionalidad'] ?></span></div>  
+                        <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Video: </span><span class="label-reparto"><?php echo $elemento['cvideo'] ?></span></div>                            
+                        <div style="margin-left: 10px;margin-top: 5px;"><span class="label-text">Fecha de subida: </span><span class="label-reparto"><?php echo substr($elemento['created_at'] , 0, -8)?></span></div>                  
                         <?php include 'edit_view.php'; ?>
                         <?php include 'add_video_option.php'; ?>
                         <?php

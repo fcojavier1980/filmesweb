@@ -239,6 +239,8 @@ src: url('../fonts/golden-dragon-solid.ttf');
     position: relative;
     background-image:url("tapete.jpg");
     box-shadow: 0px 1px 12px 1px black;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .specific_content_long{
@@ -250,6 +252,8 @@ src: url('../fonts/golden-dragon-solid.ttf');
     background-image:url("tapete.jpg");
     position: relative;    
     box-shadow: 0px 1px 12px 1px black;     
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .specific_content_list{
@@ -259,6 +263,8 @@ src: url('../fonts/golden-dragon-solid.ttf');
     background-image:url("tapete.jpg");
     box-shadow: 0px 1px 12px 1px black;
     position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .specific_content_sub_list{
@@ -273,14 +279,18 @@ src: url('../fonts/golden-dragon-solid.ttf');
     background-image:url("tapete.jpg");
     padding-top: 90px;
     box-shadow: 0px 1px 12px 1px black;
-    position: relative;    
+    position: relative; 
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 .specific_content_search{
     background-color: #556b2f; 
     padding-top: 90px;
     background-image:url("tapete.jpg");
     position: relative;    
-    box-shadow: 0px 1px 12px 1px black;   
+    box-shadow: 0px 1px 12px 1px black; 
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .specific_content_comment{
@@ -527,11 +537,15 @@ margin-left: 10px;
 
     font-size : 24px;
     color: black;
+    text-shadow: 2px 2px #eedab5;
+    text-decoration: underline;
 }
 
 .label-text{
-    font-family: Roboto-Bold;
-    font-size : 14px;
+font-family: monospace;
+font-size: 12px;
+font-weight: bold;
+text-transform: uppercase;
     
 }
 
@@ -541,13 +555,16 @@ margin-left: 10px;
     font-weight: bold;
 }
 .label-director{
-    font-family: RobotoCondensed-LightItalic;
-    font-size : 14px;
+    font-family: monospace;
+    font-size : 12px;
+
+
 }
 
 .label-reparto{
-    font-family: RobotoCondensed-LightItalic;
-    font-size : 14px;
+    font-family: monospace;
+    font-size : 12px;
+    
 
 }
 
@@ -562,7 +579,6 @@ margin-left: 10px;
     font-weight: bold;
     font-style: italic;
     color: blue;
-    background-color: #f3d1a4;
 }
 
 #alter-link{
@@ -595,7 +611,7 @@ margin-left: 10px;
     color: #672d3b;
     white-space: nowrap;
     text-shadow: 1px 1px #ffffff;
-    background-color: #f3d1a4;
+    background-color: rgba(200, 54, 54, 0.0);
     
 }
 
@@ -706,6 +722,26 @@ margin-left: 10px;
 }
 
 #preloader > img{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+   
+
+   
+}
+
+#preloaderCover{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: red;
+    opacity: 0.4;
+    z-index: 1000;
+   
+}
+
+#preloaderCover > img{
     height: 100%;
     width: 100%;
     position: relative;
@@ -1162,7 +1198,7 @@ font-weight: bold;
 .collapsible-container-video{
     display: flex;
     width: 50%;
-    background-color: #f3d1a4;
+    
 }
 
 .separador{
@@ -1322,7 +1358,7 @@ font-weight: bold;
 .header_list_sub{
     position: absolute;
     height: 30px;
-    width: 80.5%;
+    width: 100%;
     margin-bottom: 2px;  
     background-color: darksalmon;
     border-bottom: 2px solid burlywood;   

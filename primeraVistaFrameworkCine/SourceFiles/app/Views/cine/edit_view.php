@@ -43,7 +43,9 @@ function closeMod(){
 		<div class="mod-text">REPARTO
 			<input type="text" class="mod-text" name="reparto" value="<?php echo $elemento['reparto'] ?>"/>
 		</div>
-		
+		<div class="mod-text">CALIDAD DE VIDEO
+			<input type="text" class="mod-text"  name="cvideo" value="<?php echo $elemento['cvideo'] ?>"/>
+		</div>		
 		<div class="mod-text">LINK
 			<input type="text" class="mod-text" id="film-link" name="texto" value="<?php echo $elemento['texto'] ?>"/>
 		</div>
