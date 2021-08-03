@@ -668,11 +668,12 @@ function imageLoadControl2(){
                 } ?>      
             </div>
             <div style="background-color: #556b2f; display: <?= $_SESSION['usuario'] == 'NULL' ? 'none' : 'block'?>">
-                <table border="1" width="250px" cellpading="5px" cellspacing="5px">
+                <table border="1" width="100%" cellpading="5px" cellspacing="5px">
                         <tr>
                             <td>ÚLTIMAS VISITAS</td>
                             <td>HORA</td>
                             <td>IP</td>
+                            <td>INFO</td>
                         </tr> 
             <?php        
            foreach($consulta_ultimas_visitas as $key => $elem ){ ?>
@@ -681,12 +682,29 @@ function imageLoadControl2(){
                             <td><?php echo $elem['fecha'] ?></td>
                             <td align="right"><?php echo $elem['hour'] ?></td>
                             <td align="right"><?php echo $elem['ip'] ?></td>
+                            <td align="right">
+                                <?php 
+                                if($_SESSION['usuario'] == 'NULL'){
+
+                                }else{
+                                    $ip = $elem['ip']; // your ip address here
+                                    $query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
+                                    if($query && $query['status'] == 'success')
+                                    {
+                                        echo  $query['city'] . ' ('. $query['country'] .')';
+                                  
+                                    }                                     
+                                }
+    ?>
+                                
+                            </td>
                         </tr>           
              
            <?php }  ?>
                 </table>
            </div>   
            <?php    
+
             $query = mysqli_query( $con, "SELECT DISTINCT(fecha) FROM visitas ORDER BY fecha DESC");
             if (mysqli_num_rows($query) > 0) { ?>
                 <div style="background-color: #556b2f; display: <?= $_SESSION['usuario'] == 'NULL' ? 'none' : 'block'?>">
