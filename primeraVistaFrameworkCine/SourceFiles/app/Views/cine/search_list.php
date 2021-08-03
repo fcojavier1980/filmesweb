@@ -44,17 +44,17 @@ function submitGenre(elem){
                 <?php
                 if(isset($display['search_films'])){
                     $header_title = isset($title) ? 'BÚSQUEDA' : 'LISTADO COMPLETO';
-                    $header_list = array( 'Título', 'Director','Año', 'Género','Subida','&nbsp'); 
+                    $header_list = array( 'Título', 'Director','Año', 'Género','Subida', 'Video','&nbsp'); 
                     $container_list = 'list_content';
                     $data_list = $display['search_films'];
-                    $keys_data_list = array( 'titulo', 'director','anyo','genero','created_at','id');   
-                    $style_data_list = array( '210px', '140px','60px', '110px','80px', '15px');
+                    $keys_data_list = array( 'titulo', 'director','anyo','genero','created_at','cvideo', 'id');   
+                    $style_data_list = array( '210px', '140px','60px', '110px','80px', '80px','15px');
                     $action_filter1 = array(
                       'type' => 'redirect_and_view',
                       'name' => 'Ver Ficha',
                       'url' => 'index.php?r=cine/film_sheet&id=', 
                     );    
-                    listado_flex_5col_1action($header_title, $total_results, $header_list, $container_list, $data_list, $keys_data_list,$style_data_list, $data_list_size=null, $action_filter1);
+                    listado_flex_6col_1action($header_title, $total_results, $header_list, $container_list, $data_list, $keys_data_list,$style_data_list, $data_list_size=null, $action_filter1);
                     }else{ ?>
                 <div class="list_content"><span class="rotulo_mid">No se han encontrado resultados</span></div>
                 <?php } ?>

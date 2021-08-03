@@ -115,12 +115,27 @@ if(isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'Javi'){
                     else if(key == 'Australia'){
                         drawPieSlice(ctx, 150, 120, 100, sumatorio_since * Math.PI, sumatorio_to * Math.PI, '#cd00cd');
                         $('.text_for_section_section1').append( "<span style='background-color:#cd00cd' class='label-text-data-section'>"+key+":&nbsp"+value+"&nbsp películas</span></br>" );                        
-                    }                      
-                    else if(key == 'Alemania' || key == 'Suiza' || key == 'Botswana'){
-                        drawPieSlice(ctx, 150, 120, 100, sumatorio_since * Math.PI, sumatorio_to * Math.PI, 'gray'); 
-                        $('.text_for_section_section1').append( "<span style='background-color:gray' class='label-text-data-section'>"+key+":&nbsp"+value+"&nbsp películas</span></br>" );                       
+                    } 
+                    else if(key == 'Alemania'){
+                        drawPieSlice(ctx, 150, 120, 100, sumatorio_since * Math.PI, sumatorio_to * Math.PI, '#176636');
+                        $('.text_for_section_section1').append( "<span style='background-color:#176636' class='label-text-data-section'>"+key+":&nbsp"+value+"&nbsp películas</span></br>" );                        
+                    }   
+                    else if(key == 'Argentina'){
+                        drawPieSlice(ctx, 150, 120, 100, sumatorio_since * Math.PI, sumatorio_to * Math.PI, '#2e3aac');
+                        $('.text_for_section_section1').append( "<span style='background-color:#2e3aac' class='label-text-data-section'>"+key+":&nbsp"+value+"&nbsp películas</span></br>" );                        
+                    } 
+                    else if(key == 'Suiza'){
+                        drawPieSlice(ctx, 150, 120, 100, sumatorio_since * Math.PI, sumatorio_to * Math.PI, '#481a62');
+                        $('.text_for_section_section1').append( "<span style='background-color:#481a62' class='label-text-data-section'>"+key+":&nbsp"+value+"&nbsp películas</span></br>" );                        
+                    }                                                                                
+                    else if(key == 'Botswana'){
+                        drawPieSlice(ctx, 150, 120, 100, sumatorio_since * Math.PI, sumatorio_to * Math.PI, '#a8e8af'); 
+                        $('.text_for_section_section1').append( "<span style='background-color:#a8e8af' class='label-text-data-section'>"+key+":&nbsp"+value+"&nbsp películas</span></br>" );                       
                     }  
-
+                    else if(key == 'Rusia'){
+                        drawPieSlice(ctx, 150, 120, 100, sumatorio_since * Math.PI, sumatorio_to * Math.PI, '#4c0000'); 
+                        $('.text_for_section_section1').append( "<span style='background-color:#4c0000' class='label-text-data-section'>"+key+":&nbsp"+value+"&nbsp películas</span></br>" );                       
+                    } 
                     else{
                         drawPieSlice(ctx, 150, 100, 100, sumatorio_since * Math.PI, sumatorio_to * Math.PI, colorin);
                         $('.text_for_section_section1').append( "<span style='background-color:"+colorin+"' class='label-text-data-section'>"+key+":&nbsp"+value+"&nbsp películas</span></br>" );

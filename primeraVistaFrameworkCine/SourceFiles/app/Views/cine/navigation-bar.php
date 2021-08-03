@@ -60,9 +60,7 @@ function closeInfo(){
     <div class="icon-rtcld" id="icon-stats" onclick="showMixWindow()">
         <img src="<?= BASEPATH ?>SourceFiles/resources/images/icon-stats.png"/>
     </div>  
-    <div class="icon-rtcld" id="icon-game" onclick="showGameWindow()">
-        <img src="<?= BASEPATH ?>SourceFiles/resources/images/icon-game.png"/>
-    </div>           
+         
     <div class="icon-rtcld" id="icon-info" onclick="showInfo()">
         <img src="<?= BASEPATH ?>SourceFiles/resources/images/icon-info.png"/>
     </div>      

@@ -1,6 +1,6 @@
 <?php
 if(!defined('IS_LOCAL4')) define('IS_LOCAL4'   , in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']));
-if(!defined('URLWEB4')) define('URLWEB4' , IS_LOCAL4 ? 'http://localhost/proyectos/public_html/' : 'https://retroceluloide.com/');  
+if(!defined('URLWEB4')) define('URLWEB4' , IS_LOCAL4 ? 'http://localhost/proyectos/retroceluloide/' : 'https://retroceluloide.com/');  
 
 require '../../framework/Model/connection_bdensayo.php';
 

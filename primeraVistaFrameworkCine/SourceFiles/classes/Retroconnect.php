@@ -43,7 +43,7 @@ class Retroconnect {
         if($ip_view == 1){
             //echo 'Estás en localhost';
             $db_host="localhost";
-            $db_nombre="bdensayo";
+            $db_nombre="u805003232_bd_ensayo";
             $db_usuario="root";
             $db_contra="";     
         }else{
@@ -60,7 +60,7 @@ class Retroconnect {
         if($ip_view == 1){
            // echo 'Estás en localhost';
             $db_host="localhost";
-            $db_nombre="bdensayo";
+            $db_nombre="u805003232_bd_ensayo";
             $db_usuario="root";
             $db_contra=""; 
             $total_results = 0;   
@@ -121,7 +121,7 @@ class Retroconnect {
                 echo $sql . "<br>" . $e->getMessage();
                 }
 
-            $conn = null;              
+            $conn = null;             
         }
         if($total_results > 0){
         return $datos_pasados;

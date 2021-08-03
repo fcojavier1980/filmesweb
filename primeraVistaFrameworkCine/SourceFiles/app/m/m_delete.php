@@ -1,6 +1,4 @@
 <?php
-if(!defined('IS_LOCAL3')) define('IS_LOCAL3'   , in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']));
-if(!defined('URLWEB3')) define('URLWEB3' , IS_LOCAL3 ? 'http://localhost/proyectos/public_html/' : 'https://retroceluloide.com/'); 
 require '../../framework/Model/connection_bdensayo.php';
 if(isset($_POST['id_film'])){
 $p_id = $_POST['id_film'];
@@ -39,8 +37,7 @@ $conn = null;
 // PHP permanent URL redirection
 
 
-header("refresh:1; url=" . URLWEB3 . "index.php?r=cine/index");
-exit();
 
+exit();
 
 ?>

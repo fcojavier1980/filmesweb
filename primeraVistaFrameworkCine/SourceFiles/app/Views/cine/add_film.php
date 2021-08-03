@@ -129,7 +129,7 @@ $ficheros1  = scandir($desired_dir2);
             <?php if($_SESSION['usuario'] != 'NULL'){?>        
 			<form action="<?= URL ?>SourceFiles/app/m/m_add_film.php" method="get">
 				<div style="height: 100%; background-color: #556b2f; display: flex;"> 	
-					<div style="margin-left: 20px; padding-top: 20px; width: 20%;">	
+					<div style="margin-left: 80px; padding-top: 20px; width: 20%;">	
 						<div class="rotulo_mid_no_mg" style="margin-top: 15px;">TÍTULO</div>
 						<div><input type="text" name="title" /></div>				
 						<div class="rotulo_mid_no_mg" style="margin-top: 15px;">DIRECTOR</div>

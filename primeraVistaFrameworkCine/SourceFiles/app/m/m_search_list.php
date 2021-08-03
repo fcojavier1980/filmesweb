@@ -15,7 +15,7 @@ if(!isset($_POST['title'])){
         $conn = new PDO("mysql:host=$db_host;dbname=$db_nombre", $db_usuario, $db_contra);
         //set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql="SELECT * FROM peliculas";
+        $sql="SELECT * FROM peliculas ORDER BY created_at DESC";
         $result=$conn->prepare($sql);
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $result->execute();
@@ -42,6 +42,7 @@ if(!isset($_POST['title'])){
     try {
         $conn = new PDO("mysql:host=$db_host;dbname=$db_nombre", $db_usuario, $db_contra);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql="SELECT * FROM peliculas WHERE titulo LIKE '%$title%'";
         $result=$conn->prepare('SELECT * FROM peliculas WHERE titulo LIKE ?');
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $result->execute(array('%'.$title.'%'));
@@ -53,7 +54,7 @@ if(!isset($_POST['title'])){
             while($row = $result->fetch()){
                 $display['search_films'][] = $row;   
             }  
-            $total_results = count($display['search_films']);        
+            $total_results = count($display['search_films']);          
         }
     }
     catch(PDOException $e)

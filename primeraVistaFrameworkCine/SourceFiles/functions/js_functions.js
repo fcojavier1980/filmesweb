@@ -327,6 +327,165 @@ function sortList_5col_1action(elem, num){
 	//textos_ordenados = textos_original;
 }
 
+
+function sortList_6col_1action(elem, num){
+
+	var sort_col = elem.id;
+	var textos_col_map_original = [];
+	var textos_col_map = [];
+	//En este bucle estamos creando dinámicamente los arrays que empiezan por 'textos_col_'
+	for(var c = 0; c < num; c++){
+		eval("textos_col_"+c+"=[]");
+	}
+
+
+	var rows = $("[id^='alternate_row_list']");
+	var cont = 0;
+	$( rows ).each(function() {
+		var content_text_col_0 = $(this).find('.sort_col_list_0');
+		var content_text_col_1 = $(this).find( '.sort_col_list_1');
+		var content_text_col_2 = $(this).find( '.sort_col_list_2');
+		var content_text_col_3 = $(this).find( '.sort_col_list_3');
+		var content_text_col_4 = $(this).find( '.sort_col_list_4');
+		var content_text_col_5 = $(this).find( '.sort_col_list_5');
+		var content_text_col_6 = $(this).find( '.sort_col_list_6');
+
+		var texto_col_0 = $(content_text_col_0).text();
+		var texto_col_1 = $(content_text_col_1).text();
+		var texto_col_2 = $(content_text_col_2).text();
+		var texto_col_3 = $(content_text_col_3).text();	
+		var texto_col_4 = $(content_text_col_4).text();			
+		var texto_col_5 = $(content_text_col_5).text();
+		var texto_col_6 = $(content_text_col_6).text();
+
+		if(sort_col == 'sort_col_head_0'){
+			textos_col_map.push([texto_col_0, texto_col_1, texto_col_2, texto_col_3, texto_col_4, texto_col_5, texto_col_6]);
+		}
+		if(sort_col == 'sort_col_head_1'){
+			textos_col_map.push([texto_col_1, texto_col_0, texto_col_2, texto_col_3, texto_col_4, texto_col_5, texto_col_6]);
+		}	
+		if(sort_col == 'sort_col_head_2'){
+			textos_col_map.push([texto_col_2, texto_col_0, texto_col_1, texto_col_3, texto_col_4, texto_col_5, texto_col_6]);
+		}	
+		if(sort_col == 'sort_col_head_3'){
+			textos_col_map.push([texto_col_3, texto_col_0, texto_col_1, texto_col_2, texto_col_4, texto_col_5, texto_col_6]);
+		}	
+		if(sort_col == 'sort_col_head_4'){
+			textos_col_map.push([texto_col_4, texto_col_0, texto_col_1, texto_col_2, texto_col_3, texto_col_5, texto_col_6]);
+		}	
+		if(sort_col == 'sort_col_head_5'){
+			textos_col_map.push([texto_col_5, texto_col_0, texto_col_1, texto_col_2, texto_col_3, texto_col_4, texto_col_6]);
+		}	
+		if(sort_col == 'sort_col_head_6'){
+			textos_col_map.push([texto_col_6, texto_col_0, texto_col_1, texto_col_2, texto_col_3, texto_col_4, texto_col_5]);
+		}					
+		//textos_col_map_original.push([texto_col_0, texto_col_1, texto_col_2, texto_col_3, texto_col_4, ]);					
+	});	
+	
+	if( order_desc == 0){
+		var textos_ordenados = textos_col_map.sort();
+		order_desc++;
+	}else{
+		var textos_ordenados = textos_col_map.sort();
+		textos_ordenados.reverse();
+		order_desc--;
+	}
+	var num = textos_ordenados.length;
+
+	for(var k = 0; k < num; k++){
+		var col_0 = $("#alternate_row_list_"+k).find( '.sort_col_list_0');
+		var col_1 = $("#alternate_row_list_"+k).find( '.sort_col_list_1');
+		var col_2 = $("#alternate_row_list_"+k).find( '.sort_col_list_2');
+		var col_3 = $("#alternate_row_list_"+k).find( '.sort_col_list_3');
+		var col_4 = $("#alternate_row_list_"+k).find( '.sort_col_list_4');
+		var col_5 = $("#alternate_row_list_"+k).find( '.sort_col_list_5');
+		var col_6 = $("#alternate_row_list_"+k).find( '.sort_col_list_6');
+
+		if(sort_col == 'sort_col_head_0'){
+			$(col_0).text(textos_ordenados[k][0]);
+			$(col_1).text(textos_ordenados[k][1]);
+			$(col_2).text(textos_ordenados[k][2]);
+			$(col_3).text(textos_ordenados[k][3]);
+			$(col_4).text(textos_ordenados[k][4]);
+			$(col_5).text(textos_ordenados[k][5]);
+			$(col_6).text(textos_ordenados[k][6]);
+		}	
+
+		if(sort_col == 'sort_col_head_1'){
+			$(col_1).text(textos_ordenados[k][0]);
+			$(col_0).text(textos_ordenados[k][1]);
+			$(col_2).text(textos_ordenados[k][2]);
+			$(col_3).text(textos_ordenados[k][3]);
+			$(col_4).text(textos_ordenados[k][4]);
+			$(col_5).text(textos_ordenados[k][5]);
+			$(col_6).text(textos_ordenados[k][6]);
+		}	
+		if(sort_col == 'sort_col_head_2'){
+			$(col_2).text(textos_ordenados[k][0]);
+			$(col_0).text(textos_ordenados[k][1]);
+			$(col_1).text(textos_ordenados[k][2]);
+			$(col_3).text(textos_ordenados[k][3]);
+			$(col_4).text(textos_ordenados[k][4]);
+			$(col_5).text(textos_ordenados[k][5]);
+			$(col_6).text(textos_ordenados[k][6]);
+		}		
+		if(sort_col == 'sort_col_head_3'){
+			$(col_3).text(textos_ordenados[k][0]);
+			$(col_0).text(textos_ordenados[k][1]);
+			$(col_1).text(textos_ordenados[k][2]);
+			$(col_2).text(textos_ordenados[k][3]);
+			$(col_4).text(textos_ordenados[k][4]);
+			$(col_5).text(textos_ordenados[k][5]);
+			$(col_6).text(textos_ordenados[k][6]);
+		}
+		if(sort_col == 'sort_col_head_4'){
+			$(col_4).text(textos_ordenados[k][0]);
+			$(col_0).text(textos_ordenados[k][1]);
+			$(col_1).text(textos_ordenados[k][2]);
+			$(col_2).text(textos_ordenados[k][3]);
+			$(col_3).text(textos_ordenados[k][4]);
+			$(col_5).text(textos_ordenados[k][5]);
+			$(col_6).text(textos_ordenados[k][6]);
+		}		
+		if(sort_col == 'sort_col_head_5'){
+			$(col_5).text(textos_ordenados[k][0]);
+			$(col_0).text(textos_ordenados[k][1]);
+			$(col_1).text(textos_ordenados[k][2]);
+			$(col_2).text(textos_ordenados[k][3]);
+			$(col_3).text(textos_ordenados[k][4]);
+			$(col_4).text(textos_ordenados[k][5]);
+			$(col_6).text(textos_ordenados[k][6]);
+		}			
+		if(sort_col == 'sort_col_head_6'){
+			$(col_6).text(textos_ordenados[k][0]);
+			$(col_0).text(textos_ordenados[k][1]);
+			$(col_1).text(textos_ordenados[k][2]);
+			$(col_2).text(textos_ordenados[k][3]);
+			$(col_3).text(textos_ordenados[k][4]);
+			$(col_4).text(textos_ordenados[k][5]);
+			$(col_5).text(textos_ordenados[k][6]);
+		}									
+	}
+
+	var id_to_action_1 = $(".sort_col_list_6");
+
+	$( id_to_action_1 ).each(function() {
+		var id_nueva = $(this).text();
+		var next_hermano = $(this).next();		
+		var form_action_1 = $(next_hermano).find( '.action_data_list');
+		var action_1 = form_action_1[0];
+		var text_action_1 = $(action_1).attr("action");
+		var pos = text_action_1.lastIndexOf("&id=");
+		var pos_fixed = pos + 4;
+		var text_action_no_id = text_action_1.slice(0, pos_fixed);
+		var full_text_action_1 = text_action_no_id + id_nueva;
+		var text_action_fixed_1 = $(action_1).attr("action", full_text_action_1);
+
+	});		
+
+	//textos_ordenados = textos_original;
+}
+
 function sortList_2col_1action(elem, num){
 
 	var sort_col = elem.id;

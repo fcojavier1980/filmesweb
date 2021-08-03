@@ -34,12 +34,7 @@ class CineController{
 
 		return ROUTER::show_view('cine/mix');
 	
-	}	
-	public function game_zone(){
-
-		return ROUTER::show_view('cine/game');
-	
-	}			
+	}		
 
 	public function film_sheet(){
 

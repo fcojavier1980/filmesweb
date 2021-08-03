@@ -19,7 +19,7 @@
                     </div>                                
                 </div>
             </form>
-<script>
+            <script>
     function slideTabs(elem){
     console.log(elem);
     //var activa = $(elem).addClass( "tab_genre_disfocus" );
@@ -45,4 +45,4 @@
   ;
 }
 
-</script>            
+</script>    

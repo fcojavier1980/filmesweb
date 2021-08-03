@@ -1,9 +1,9 @@
 <?php 
 
-class Retroconnect {
+class Retrostart {
 
 	function __construct() {
-    	//$this->init();
+    	$this->init();
   	}
 
   /**
@@ -35,12 +35,29 @@ class Retroconnect {
     return;
   }
 
-public static function local_or_web() {
+public static function init_web() {
     $ip_view = in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']);
     if($ip_view == 1){
-      echo 'Estás en localhost';
+      if (headers_sent()) {
+          // las cabeceras ya se han enviado, no intentar añadir una nueva
+          //header("Location: http://localhost/proyectos/retroceluloide/index.php?r=cine/index");
+          die("Redirect failed. Please click on this link: <a href=...>");
+      }
+      else {
+          // es posible añadir nuevas cabeceras HTTP
+          header("Location: http://localhost/proyectos/retroceluloide/index.php?r=cine/index");
+          die();
+      }
     }else{
-
+      if (headers_sent()) {
+          // las cabeceras ya se han enviado, no intentar añadir una nueva
+          //header("Location: http://localhost/proyectos/retroceluloide/index.php?r=cine/index");
+      }
+      else {
+          // es posible añadir nuevas cabeceras HTTP
+          header("Location: https://retroceluloide.000webhostapp.com/index.php?r=cine/index");
+          die();
+      }
     }
     return;
   }
