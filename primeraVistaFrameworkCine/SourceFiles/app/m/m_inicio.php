@@ -101,6 +101,7 @@ if (mysqli_num_rows($rs_visita_real) == 0) {
 //$consulta_ultimas_visitas = "SELECT * FROM visitas order by fecha desc limit 8";
 //$rs_ultimas_visitas = mysqli_query($con, $consulta_ultimas_visitas);
 //var_dump($rs_ultimas_visitas);
-//$consulta_ultimas_visitas = Retroconnect::variable_select_query("SELECT * FROM visitas order by fecha desc, hour desc limit 14");
-//$total_results_last_visit = count($consulta_ultimas_visitas); 
+//$sqlquery = "SELECT * FROM visitas order by fecha desc, hour desc limit 14";
+$consulta_ultimas_visitas = Retroconnect::variable_select_query("SELECT * FROM visitas order by fecha desc, hour desc limit 14");
+$total_results_last_visit = count($consulta_ultimas_visitas); 
 

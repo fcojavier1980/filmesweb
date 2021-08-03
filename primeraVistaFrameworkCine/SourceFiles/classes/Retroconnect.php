@@ -70,7 +70,12 @@ class Retroconnect {
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $result=$conn->prepare($sql);
                 $result->setFetchMode(PDO::FETCH_ASSOC);
-                $result->execute(array('%'.$param_post.'%'));
+                if($param_post != null){
+                    $result->execute(array('%'.$param_post.'%'));
+                }else{
+                    $result->execute();
+                }
+                
                 $result_num = $result->rowCount();
                 if($result_num < 1){
 
@@ -102,7 +107,11 @@ class Retroconnect {
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $result=$conn->prepare($sql);
                 $result->setFetchMode(PDO::FETCH_ASSOC);
-                $result->execute(array('%'.$param_post.'%'));
+                if($param_post != null){
+                    $result->execute(array('%'.$param_post.'%'));
+                }else{
+                    $result->execute();
+                }
                 $result_num = $result->rowCount();
                 if($result_num < 1){
 
